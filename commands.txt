@@ -1,0 +1,16 @@
+Help
+    dotnet --help
+
+New possibilities
+    dotnet new
+
+Clean libraries
+    dotnet clean
+
+Restore packages
+    dotnet restore
+
+Generate build
+    dotnet build
+
+
