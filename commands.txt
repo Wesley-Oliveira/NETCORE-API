@@ -13,4 +13,34 @@ Restore packages
 Generate build
     dotnet build
 
+To list sdks
+    dotnet --list-sdks
 
+---Commands to generate a DDD structure
+Generate a Solution
+    dotnet new --name <<Nome>>
+
+Generate a webapi
+    dotnet new webapi -n application -o Api.Application --no-https
+        To add in a Solution
+            dotnet sln add .\Api.Application\
+
+Create Class Library
+    dotnet new classlib -n Domain -o Api.Domain -f netcoreapp3.1
+        To add in a Solution
+            dotnet sln add .\Api.Domain\
+
+Create Class Library
+    dotnet new classlib -n CrossCutting -o Api.CrossCutting -f netcoreapp3.1
+        To add in a Solution
+            dotnet sln add .\Api.CrossCutting\
+
+Create Class Library
+    dotnet new classlib -n Data -o Api.Data -f netcoreapp3.1
+        To add in a Solution
+            dotnet sln add .\Api.Data\
+
+Create Class Library
+    dotnet new classlib -n Service -o Api.Service -f netcoreapp3.1
+        To add in a Solution
+            dotnet sln add .\Api.Service\
