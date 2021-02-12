@@ -44,3 +44,26 @@ Create Class Library
     dotnet new classlib -n Service -o Api.Service -f netcoreapp3.1
         To add in a Solution
             dotnet sln add .\Api.Service\
+
+Installing dotnet tool
+    dotnet tool install --global dotnet-ef
+Run EntityFramework
+    dotnet ef
+
+Add reference to another classlib
+    dotnet add .\Api.Data\ reference .\Api.Domain
+
+Step by Step to Data:
+1 - Create a entity
+2 - Create a map for Entity
+3 - Add in Context:
+    3.1 the DbSet<newEntity>
+    3.2 the modelBuilder.Entity map
+4 - Configure the ContextFactory
+
+To create a migration
+    dotnet ef migrations add First_Migration
+
+To connect real database and push the data and information
+    dotnet ef database update
+
