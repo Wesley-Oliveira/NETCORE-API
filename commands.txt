@@ -55,6 +55,9 @@ Add reference to another classlib
     dotnet add .\Api.Service\ reference .\Api.Domain\
     dotnet add .\Api.Service\ reference .\Api.Data\
     dotnet add .\Api.Service\ reference .\Api.CrossCutting\
+    dotnet add .\Api.Application\ reference .\Api.Domain\
+    dotnet add .\Api.Application\ reference .\Api.Service\
+    dotnet add .\Api.Application\ reference .\Api.CrossCutting\
 
 Step by Step to Data:
 1 - Create a entity
