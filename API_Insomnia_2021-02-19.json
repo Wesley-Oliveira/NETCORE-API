@@ -1,0 +1,264 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2021-02-19T14:06:36.840Z",
+    "__export_source": "insomnia.desktop.app:v2020.5.2",
+    "resources": [
+        {
+            "_id": "req_f74d9fabca74424bb902dacca8239765",
+            "parentId": "fld_1b02a52837594b938ab45173d94a30d4",
+            "modified": 1613740346309,
+            "created": 1595298729816,
+            "url": "{{ base_url }}users",
+            "name": "Index",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "description": "",
+                    "id": "pair_af25893b11a8476a9145f1ed425a3f26",
+                    "name": "authorization",
+                    "value": "Bearer {{ _.token }}"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1594527732849.0938,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_1b02a52837594b938ab45173d94a30d4",
+            "parentId": "wrk_96759281ccb849dda28ea598c2a9b82b",
+            "modified": 1595298587981,
+            "created": 1595298587981,
+            "name": "User",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1595298587981,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_96759281ccb849dda28ea598c2a9b82b",
+            "parentId": null,
+            "modified": 1613743559172,
+            "created": 1595125676785,
+            "name": "API",
+            "description": "",
+            "scope": null,
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_cae706a4bec741ef996df5df04aa8f82",
+            "parentId": "fld_1b02a52837594b938ab45173d94a30d4",
+            "modified": 1613740645141,
+            "created": 1595301978330,
+            "url": "{{ base_url }}users/8084aceb-22ef-47f9-88d3-3e5a4943193b",
+            "name": "Show",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "description": "",
+                    "id": "pair_6d76a6f588ad47578cd14a4a38d1bb22",
+                    "name": "authorization",
+                    "value": "Bearer {{ _.token }}"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1594335019053.6172,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_9e7086f35c7f4bde8486b03bd8fc1c5a",
+            "parentId": "fld_1b02a52837594b938ab45173d94a30d4",
+            "modified": 1613741174183,
+            "created": 1595299942923,
+            "url": "{{ base_url }}users",
+            "name": "Store",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"name\": \"Wesley Oliveira2\",\n  \"email\": \"wesley2leby@gmail.com\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_dea888d7e72f4d5eb725a5837ab687d8",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1594142305258.1406,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_15055e310cf741c888cf58b41385d3e6",
+            "parentId": "fld_1b02a52837594b938ab45173d94a30d4",
+            "modified": 1613741842737,
+            "created": 1595302014753,
+            "url": "{{ base_url }}users",
+            "name": "Update",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n\t\"id\": \"8084aceb-22ef-47f9-88d3-3e5a4943193b\",\n  \"name\": \"Wesley Oliveira3333\",\n  \"email\": \"wesley3333leby@gmail.com\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "id": "pair_dea888d7e72f4d5eb725a5837ab687d8",
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "description": "",
+                    "id": "pair_e60a5c81f999455788411fe7913ec96d",
+                    "name": "authorization",
+                    "value": "Bearer {{ _.token }}"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1593949591462.664,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_ddafcf2cde7745aa9de21fc8ef5876e9",
+            "parentId": "fld_1b02a52837594b938ab45173d94a30d4",
+            "modified": 1613743318023,
+            "created": 1595305549508,
+            "url": "{{ base_url }}users/48ebbb25-4bf4-4082-828a-169c573fb017",
+            "name": "Delete",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "description": "",
+                    "id": "pair_7335596d8acf4f0eac2b8c80f7b2b768",
+                    "name": "authorization",
+                    "value": "Bearer {{ _.token }}"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1593949591412.664,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_86ae420a8d8efe4d1fb5e6abf635faad87faa9e9",
+            "parentId": "wrk_96759281ccb849dda28ea598c2a9b82b",
+            "modified": 1595125676972,
+            "created": 1595125676972,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1595125676972,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_86ae420a8d8efe4d1fb5e6abf635faad87faa9e9",
+            "parentId": "wrk_96759281ccb849dda28ea598c2a9b82b",
+            "modified": 1595125676983,
+            "created": 1595125676983,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        },
+        {
+            "_id": "spc_ab2155ce28f64575b761fc129eb0896f",
+            "parentId": "wrk_96759281ccb849dda28ea598c2a9b82b",
+            "modified": 1595125676790,
+            "created": 1595125676790,
+            "fileName": "EasyWaySchedule",
+            "contents": "",
+            "contentType": "yaml",
+            "_type": "api_spec"
+        },
+        {
+            "_id": "env_86bbfca7fd054f51b4694101311a744c",
+            "parentId": "env_86ae420a8d8efe4d1fb5e6abf635faad87faa9e9",
+            "modified": 1613740247664,
+            "created": 1595298599579,
+            "name": "Local",
+            "data": {
+                "base_url": "http://localhost:5000/api/",
+                "token": ""
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "base_url",
+                    "token"
+                ]
+            },
+            "color": "#7cff35",
+            "isPrivate": false,
+            "metaSortKey": 1595298599579,
+            "_type": "environment"
+        },
+        {
+            "_id": "env_bb4e1ed4c3de486d89032b328c5a053d",
+            "parentId": "env_86ae420a8d8efe4d1fb5e6abf635faad87faa9e9",
+            "modified": 1613740262367,
+            "created": 1595309490251,
+            "name": "Production",
+            "data": {
+                "base_url": "",
+                "token": ""
+            },
+            "dataPropertyOrder": {
+                "&": [
+                    "base_url",
+                    "token"
+                ]
+            },
+            "color": "#ff3535",
+            "isPrivate": false,
+            "metaSortKey": 1595309490251,
+            "_type": "environment"
+        }
+    ]
+}
