@@ -20,7 +20,11 @@
                 "pattern": "\\\\bNow listening on:\\\\s+(https?://\\\\S+)"
             },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "DB_CONNECTION": "Server=localhost;Port=3306;Database=dbAPI;Uid=root;Pwd=admin123",
+                "DB_CONNECTION2": "Server=\\SQLEXPRESS2017;Initial Catalog=dbapi;MultipleActiveResultSets=true;User ID=sa; Password=senha",
+                "DATABASE": "MYSQL",
+                "MIGRATION": "MIGRATE"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"

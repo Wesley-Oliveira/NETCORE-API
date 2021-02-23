@@ -3,7 +3,6 @@ using System;
 using System.Threading.Tasks;
 using Api.Domain.Interfaces.Services.User;
 using Microsoft.AspNetCore.Mvc;
-using Api.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Api.Domain.Dtos.User;
 

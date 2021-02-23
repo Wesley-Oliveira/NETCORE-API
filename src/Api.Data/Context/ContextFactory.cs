@@ -15,7 +15,6 @@ namespace Api.Data.Context
 
             var optionsBuilder = new DbContextOptionsBuilder<MyContext>();
             optionsBuilder.UseMySql(connectionString);
-
             //Connection with sqlserver
             //optionsBuilder.UseSqlServer(connectionString);
 
