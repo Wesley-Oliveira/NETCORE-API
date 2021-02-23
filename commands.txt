@@ -71,7 +71,7 @@ Step by Step to Data:
 
 To create a migration
     dotnet ef migrations add First_Migration
-
+To remove a migration
+    dotnet ef migrations remove
 To connect real database and push the data and information
     dotnet ef database update
-
