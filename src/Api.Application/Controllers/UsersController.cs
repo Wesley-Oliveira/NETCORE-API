@@ -51,7 +51,16 @@ namespace Api.Application.Controllers
 
             try
             {
-                return Ok(await _service.Get(id));
+                var response = await _service.Get(id);
+
+                if (response != null)
+                {
+                    return Ok(response);
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
             catch (ArgumentException e)
             {
@@ -127,8 +136,17 @@ namespace Api.Application.Controllers
 
             try
             {
-                await _service.Delete(id);
-                return NoContent();
+                var response = await _service.Get(id);
+
+                if (response != null)
+                {
+                    await _service.Delete(response.Id);
+                    return NoContent();
+                }
+                else
+                {
+                    return NotFound();
+                }
             }
             catch (Exception e)
             {
