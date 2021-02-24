@@ -76,7 +76,7 @@ To remove a migration
 To connect real database and push the data and information
     dotnet ef database update
 
-Add test project
+Add data test project
     dotnet new xunit -n Api.Data.Test -o Api.Data.Test
 
 Add on Solution
@@ -87,3 +87,10 @@ Add references o test
     dotnet add Api.Data.Test reference Api.CrossCutting
     dotnet add Api.Data.Test reference Api.Domain
     dotnet add Api.Data.Test reference Api.Application
+
+Add service test project
+    dotnet new xunit -n Api.Service.Test -o Api.Service.Test
+    dotnet sln add Api.Service.Test
+    dotnet add Api.Service.Test reference Api.Service
+    dotnet add Api.Service.Test reference Api.CrossCutting
+    dotnet add Api.Service.Test reference Api.Domain
