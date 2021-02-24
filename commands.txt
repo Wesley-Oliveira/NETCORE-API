@@ -75,3 +75,14 @@ To remove a migration
     dotnet ef migrations remove
 To connect real database and push the data and information
     dotnet ef database update
+
+Add test project
+    dotnet new xunit -n Api.Data.Test -o Api.Data.Test
+
+Add on Solution
+    dotnet sln add Api.Data.Test
+
+Add references o test
+    dotnet add Api.Data.Test reference Api.Data
+    dotnet add Api.Data.Test reference Api.CrossCutting
+    dotnet add Api.Data.Test reference Api.Domain
