@@ -86,3 +86,4 @@ Add references o test
     dotnet add Api.Data.Test reference Api.Data
     dotnet add Api.Data.Test reference Api.CrossCutting
     dotnet add Api.Data.Test reference Api.Domain
+    dotnet add Api.Data.Test reference Api.Application
