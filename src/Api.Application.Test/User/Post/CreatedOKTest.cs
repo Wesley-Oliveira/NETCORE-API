@@ -13,16 +13,6 @@ namespace Api.Application.Test.User.Post
     {
         private UsersController _controller;
 
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
         [Fact(DisplayName = "Its possible execute the POST user method.")]
         public async Task TestPost()
         {
@@ -59,11 +49,6 @@ namespace Api.Application.Test.User.Post
             Assert.NotNull(resultValue);
             Assert.Equal(UserDtoCreate.Name, resultValue.Name);
             Assert.Equal(UserDtoCreate.Email, resultValue.Email);
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
         }
     }
 }
