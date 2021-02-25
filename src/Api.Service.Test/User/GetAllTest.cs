@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,7 +13,7 @@ namespace Api.Service.Test.User
         private IUserService _service;
         private Mock<IUserService> _serviceMock;
 
-        [Fact(DisplayName = "Its possible execute the GETAll method.")]
+        [Fact(DisplayName = "Its possible execute the GETAll user method.")]
         public async Task TestGetAllMethod()
         {
             _serviceMock = new Mock<IUserService>();

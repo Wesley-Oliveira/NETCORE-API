@@ -12,7 +12,7 @@ namespace Api.Service.Test.User
         private IUserService _service;
         private Mock<IUserService> _serviceMock;
 
-        [Fact(DisplayName = "Its possible execute the GET method.")]
+        [Fact(DisplayName = "Its possible execute the GET user method.")]
         public async Task TestGetMethod()
         {
             _serviceMock = new Mock<IUserService>();
