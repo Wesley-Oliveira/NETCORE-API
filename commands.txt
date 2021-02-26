@@ -95,9 +95,16 @@ Add service test project
     dotnet add Api.Service.Test reference Api.CrossCutting
     dotnet add Api.Service.Test reference Api.Domain
 
-Add application teste project
+Add application test project
     dotnet new xunit -n Api.Application.Test -o Api.Application.Test
     dotnet sln add Api.Application.Test
     dotnet add Api.Application.Test reference Api.Application
     dotnet add Api.Application.Test reference Api.Service
     dotnet add Api.Application.Test reference Api.Domain
+
+Add Integration test project
+    dotnet new xunit -n Api.Integration.Test -o Api.Integration.Test
+    dotnet add Api.Integration.Test reference Api.Data
+    dotnet add Api.Integration.Test reference Api.CrossCutting
+    dotnet add Api.Integration.Test reference Api.Application
+    dotnet add Api.Integration.Test reference Api.Domain
