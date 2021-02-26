@@ -24,7 +24,10 @@
                 "DB_CONNECTION": "Server=localhost;Port=3306;Database=dbAPI;Uid=root;Pwd=admin123",
                 "DB_CONNECTION2": "Server=\\SQLEXPRESS2017;Initial Catalog=dbapi;MultipleActiveResultSets=true;User ID=sa; Password=senha",
                 "DATABASE": "MYSQL",
-                "MIGRATION": "MIGRATE"
+                "MIGRATION": "MIGRATE",
+                "Audience": "Example",
+                "Issuer": "Example",
+                "Seconds": "28800"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceFolder}/Views"
