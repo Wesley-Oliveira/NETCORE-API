@@ -17,13 +17,31 @@ namespace Api.Application.Test.User.Delete
         {
             var serviceMock = new Mock<IUserService>();
 
-            serviceMock.Setup(m => m.Delete(It.IsAny<Guid>()))
-                                    .ReturnsAsync(false);
+            var id = Guid.NewGuid();
+            var name = Faker.Name.FullName();
+            var email = Faker.Internet.Email();
+
+            serviceMock.Setup(m => m.Get(It.IsAny<Guid>())).ReturnsAsync(
+                new UserDto
+                {
+                    Id = id,
+                    Name = name,
+                    Email = email,
+                    CreateAt = DateTime.UtcNow
+                }
+            );
 
             _controller = new UsersController(serviceMock.Object);
-            _controller.ModelState.AddModelError("Id", "Invalid format");
+            var result = await _controller.Get(Guid.NewGuid());
+            Assert.True(result is OkObjectResult);
+            var resultValue = ((OkObjectResult)result).Value as UserDto;
+            Assert.NotNull(resultValue);
+            Assert.Equal(id, resultValue.Id);
+            Assert.Equal(name, resultValue.Name);
+            Assert.Equal(email, resultValue.Email);
 
-            var result = await _controller.Delete(default(Guid));
+            _controller.ModelState.AddModelError("Id", "Invalid format");
+            result = await _controller.Get(Guid.NewGuid());
             Assert.True(result is BadRequestObjectResult);
             Assert.False(_controller.ModelState.IsValid);
         }
