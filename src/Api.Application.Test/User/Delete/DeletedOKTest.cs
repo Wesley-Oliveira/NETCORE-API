@@ -23,11 +23,11 @@ namespace Api.Application.Test.User.Delete
             _controller = new UsersController(serviceMock.Object);
 
             var result = await _controller.Delete(Guid.NewGuid());
-            Assert.True(result is OkObjectResult);
+            Assert.True(result is NoContentResult);
 
             var resultValue = ((OkObjectResult)result).Value;
             Assert.NotNull(resultValue);
-            Assert.True((Boolean) resultValue);
+            Assert.True((Boolean)resultValue);
 
             //Adicionar tratamento comparando se guid existe ou não e comparar a partir disto
             //Caso contrário, este teste irá falhar
