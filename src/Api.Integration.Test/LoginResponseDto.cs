@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace Api.Service
+namespace Api.Integration.Test
 {
     public class LoginResponseDto
     {

@@ -104,6 +104,7 @@ Add application test project
 
 Add Integration test project
     dotnet new xunit -n Api.Integration.Test -o Api.Integration.Test
+    dotnet sln add Api.Integration.Test
     dotnet add Api.Integration.Test reference Api.Data
     dotnet add Api.Integration.Test reference Api.CrossCutting
     dotnet add Api.Integration.Test reference Api.Application
