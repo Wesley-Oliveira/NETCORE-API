@@ -1,3 +1,4 @@
+using System.Runtime.Intrinsics.X86;
 using System;
 using System.Threading.Tasks;
 using Api.Application.Controllers;
@@ -16,21 +17,37 @@ namespace Api.Application.Test.User.Delete
         public async Task TestDelete()
         {
             var serviceMock = new Mock<IUserService>();
+            var id = Guid.NewGuid();
+            var name = Faker.Name.FullName();
+            var email = Faker.Internet.Email();
 
-            serviceMock.Setup(m => m.Delete(It.IsAny<Guid>()))
+            serviceMock.Setup(m => m.Get(It.IsAny<Guid>())).ReturnsAsync(
+                new UserDto
+                {
+                    Id = id,
+                    Name = name,
+                    Email = email,
+                    CreateAt = DateTime.UtcNow
+                }
+            );
+
+            _controller = new UsersController(serviceMock.Object);
+            var result = await _controller.Get(Guid.NewGuid());
+            Assert.True(result is OkObjectResult);
+            var resultValue = ((OkObjectResult)result).Value as UserDto;
+            Assert.NotNull(resultValue);
+            Assert.Equal(id, resultValue.Id);
+            Assert.Equal(name, resultValue.Name);
+            Assert.Equal(email, resultValue.Email);
+
+            var serviceMockDel = new Mock<IUserService>();
+            serviceMockDel.Setup(m => m.Delete(resultValue.Id))
                                     .ReturnsAsync(true);
 
             _controller = new UsersController(serviceMock.Object);
 
-            var result = await _controller.Delete(Guid.NewGuid());
-            Assert.True(result is NoContentResult);
-
-            var resultValue = ((OkObjectResult)result).Value;
-            Assert.NotNull(resultValue);
-            Assert.True((Boolean)resultValue);
-
-            //Adicionar tratamento comparando se guid existe ou não e comparar a partir disto
-            //Caso contrário, este teste irá falhar
+            var resultDel = await _controller.Delete(resultValue.Id);
+            Assert.True(resultDel is NoContentResult);
         }
     }
 }
