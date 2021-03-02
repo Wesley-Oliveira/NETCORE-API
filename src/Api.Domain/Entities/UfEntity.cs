@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Api.Domain.Entities
@@ -10,6 +11,7 @@ namespace Api.Domain.Entities
 
         [Required]
         [MaxLength(50)]
-        public string Nome { get; set; }
+        public string Name { get; set; }
+        IEnumerable<CityEntity> Cities { get; set; }
     }
 }
